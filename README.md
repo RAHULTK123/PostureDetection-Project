@@ -47,20 +47,23 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/posture-detection-system.git
-
+   git clone https://github.com/RAHULTK123/PostureDetection-Project.git
+   ```
 
 2. Navigate to the Project Repository:
-```bash
-    cd posture-detection-system
+   ```bash
+   cd PostureDetection-Project
+   ```
 
 3. Install Dependencies:
-```bash
-    pip install -r requirements.txt
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. Run the Posture Detection System:
-```bash
-    python3 main.py
+   ```bash
+   python main_2.py
+   ```
 
 
 
