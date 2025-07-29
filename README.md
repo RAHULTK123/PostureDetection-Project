@@ -43,6 +43,10 @@ Before you begin, ensure you have met the following requirements:
 
 ---
 
+## Firebase Activation
+
+For Firebase activation, ensure you are logged into the appropriate Google account to access the Firebase project. This may involve logging into the specified account in your project's Firebase configuration.
+
 ## Installation
 
 1. Clone the repository:
