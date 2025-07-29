@@ -1,73 +1,54 @@
-# Real-Time Posture Detection System
+# Posture Detection Project
 
-This project is a real-time posture detection system that utilizes **Mediapipe**, **OpenCV**, and **Firebase** to monitor and analyze human posture. It calculates joint angles using key points on the body and provides feedback on whether the user's posture is "Good" or "Bad". The system includes a graphical user interface (GUI) for live video feed display and posture evaluation.
+This repository contains both desktop and mobile applications for posture detection and monitoring.
 
----
+## Project Structure
 
-## Features
+```
+posture_detection_project/
+├── desktop-app/          # Python desktop application
+│   ├── main_2.py         # Main application file
+│   ├── requirements.txt  # Python dependencies
+│   └── README.md         # Desktop app documentation
+│
+└── mobile-app/           # Android mobile application
+    ├── app/src/          # Android source code
+    ├── build.gradle.kts  # Android build configuration
+    └── .gitignore        # Android-specific gitignore
+```
 
-- **Real-time Posture Detection**:
-  - Detects body landmarks using Mediapipe's BlazePose.
-  - Calculates joint angles to determine posture.
-- **Angle-Based Evaluation**:
-  - Uses geometric calculations to classify posture as "Good" or "Bad".
-- **GUI Interface**:
-  - Displays video feed with posture landmarks and real-time feedback.
-  - Shows visual indicators for posture status (green = "Good", red = "Bad").
-- **Data Logging**:
-  - Logs posture status into Firebase for historical tracking.
+## Applications
 
----
+### Desktop Application
+- **Technology**: Python with Tkinter/GUI framework
+- **Purpose**: Desktop posture monitoring application
+- **Location**: `desktop-app/`
+- **Documentation**: See `desktop-app/README.md`
 
-## How It Works
+### Mobile Application
+- **Technology**: Android (Java)
+- **Purpose**: Mobile companion app for posture tracking
+- **Location**: `mobile-app/`
+- **Features**: 
+  - User authentication (Login/Register)
+  - Posture data visualization
+  - History tracking
+  - Good posture image gallery
 
-1. Captures live video feed using OpenCV.
-2. Processes frames with Mediapipe to extract body landmarks.
-3. Calculates angles between key points on the body (e.g., shoulders, back).
-4. Compares calculated angles with pre-defined thresholds to classify posture.
-5. Displays feedback and logs data to Firebase for further analysis.
+## Getting Started
 
----
+### Desktop App
+1. Navigate to `desktop-app/`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the application: `python main_2.py`
 
-## Prerequisites
+### Mobile App
+1. Navigate to `mobile-app/`
+2. Open in Android Studio
+3. Build and run on an Android device or emulator
 
-Before you begin, ensure you have met the following requirements:
+## Firebase Integration
+Both applications can integrate with Firebase for data synchronization and user authentication.
 
-- Python 3.10 or higher
-- Required Python libraries:
-  - `mediapipe`
-  - `opencv-python`
-  - `firebase-admin`
-  - `tkinter`
-- Firebase account and project setup for real-time database usage.
-
----
-
-## Firebase Activation
-
-For Firebase activation, ensure you are logged into the appropriate Google account to access the Firebase project. This may involve logging into the specified account in your project's Firebase configuration.
-
-## Installation
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/RAHULTK123/PostureDetection-Project.git
-   ```
-
-2. Navigate to the Project Repository:
-   ```bash
-   cd PostureDetection-Project
-   ```
-
-3. Install Dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Run the Posture Detection System:
-   ```bash
-   python main_2.py
-   ```
-
-
-
+## Development
+Each application maintains its own development environment and dependencies. See the respective README files in each directory for detailed setup instructions.
