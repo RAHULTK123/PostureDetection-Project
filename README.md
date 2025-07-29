@@ -13,6 +13,7 @@ posture_detection_project/
 │
 └── mobile-app/           # Android mobile application
     ├── app/src/          # Android source code
+    ├── releases/         # Compiled APK files
     ├── build.gradle.kts  # Android build configuration
     └── .gitignore        # Android-specific gitignore
 ```
@@ -43,6 +44,13 @@ posture_detection_project/
 3. Run the application: `python main_2.py`
 
 ### Mobile App
+
+**Option 1: Install Pre-built APK**
+1. Download the APK from `mobile-app/releases/app-release.apk`
+2. Install on your Android device (requires enabling "Unknown Sources")
+3. See `mobile-app/releases/README.md` for detailed installation instructions
+
+**Option 2: Build from Source**
 1. Navigate to `mobile-app/`
 2. Open in Android Studio
 3. Build and run on an Android device or emulator
