@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "308760642475",
+    "firebase_url": "https://posture-detection-e30cf-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "posture-detection-e30cf",
+    "storage_bucket": "posture-detection-e30cf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:308760642475:android:498bc33c00f2bb19d4c8ee",
+        "android_client_info": {
+          "package_name": "com.example.posture_detection_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "308760642475-21ochbkk7eo6lvndfn4t6qv8jrf9r73d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXkWqZoOuruz197cHCYIsP39EzlEJWW8k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "308760642475-21ochbkk7eo6lvndfn4t6qv8jrf9r73d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

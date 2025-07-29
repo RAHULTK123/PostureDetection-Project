@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Posture-Detection-App</string>
+
+    <string name="notification_channel_name">Posture Alerts</string>
+    <string name="notification_channel_description">Notifications for bad posture detection</string>
+    <string name="bad_posture_alert_title">Bad Posture Alert</string>
+    <string name="bad_posture_alert_text">You have been in a bad posture for too long.</string>
+</resources>

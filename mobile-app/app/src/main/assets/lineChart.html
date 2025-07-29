@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Posture Status History</title>
+</head>
+<body>
+<canvas id="historyChart" width="400" height="200"></canvas>
+
+<script>
+        const ctx = document.getElementById('historyChart').getContext('2d');
+
+        // Convert status labels to numeric values
+        const statusMapping = {
+            "Bad": 0,
+            "Good": 1
+        };
+
+        // Initialize the Line Chart
+        const historyChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [], // Labels will be added dynamically
+                datasets: [{
+                    label: 'Posture Status Over Time',
+                    data: [],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    backgroundColor: 'rgba(75, 192, 192, 0.3)',
+                    borderWidth: 3, // 🔥 Thicker line for better visibility
+                    pointRadius: 3, // 🔥 Reduce point size for a cleaner look
+                    pointHoverRadius: 6, // 🔥 Slightly increase hover effect
+                    pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                    fill: false, // 🔥 Remove area fill for a cleaner look
+                    tension: 0.3, // 🔥 Add slight curve to the line for smoother transitions
+                    stepped: true // 🔥 Ensure step-like transitions
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        type: 'category', // 🔥 Keep timestamps as categories
+                        title: {
+                            display: true,
+                            text: 'Time',
+                            font: {
+                                size: 14
+                            }
+                        },
+                        ticks: {
+<!--                            maxRotation: 30, // 🔥 Reduce tilt angle for readability-->
+<!--                            minRotation: 30,-->
+<!--                            autoSkip: true,-->
+<!--                            maxTicksLimit: 10 // 🔥 Prevent too many overlapping labels-->
+                                display: false
+                        }
+                    },
+                    y: {
+                        type: 'linear',
+                        ticks: {
+                            callback: function(value) {
+                                return value === 1 ? "Good" : "Bad";
+                            },
+                            stepSize: 1,
+                            min: 0,
+                            max: 1
+                        },
+                        title: {
+                            display: true,
+                            text: 'Posture Status',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: true,
+                        labels: {
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Function to update the chart dynamically
+        function updateChart(dataPoints) {
+            console.log("Received Data in WebView:", dataPoints);
+
+            // Ensure data is sorted correctly (oldest first)
+            dataPoints.sort((a, b) => new Date(a.x) - new Date(b.x));
+
+            // Convert data for Chart.js
+            const formattedData = dataPoints.map(point => ({
+                x: point.x, // Keep it as a category (formatted as "MMM dd, HH:mm")
+                y: statusMapping[point.y] // Convert "Good"/"Bad" to 1/0
+            }));
+
+            console.log("Formatted Data for Chart.js:", formattedData);
+
+            // Update labels for x-axis
+            historyChart.data.labels = formattedData.map(point => point.x);
+
+            // Update the dataset
+            historyChart.data.datasets[0].data = formattedData;
+
+            // Refresh the Chart
+            historyChart.update();
+        }
+    </script>
+</body>
+</html>
